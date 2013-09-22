@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+Ruby 2.0
 
 * System dependencies
+Rails 4
+
 
 * Configuration
+Postgresql
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Test suite
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Iterations
+1. spec/features/user_registers_a_parking_spot_spec.rb
+2. rails g resource ParkingRegistration first_name:string last_name:string email:string spot_number:integer parked_on:date
