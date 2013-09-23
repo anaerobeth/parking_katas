@@ -1,12 +1,15 @@
 class ParkingRegistrationsController < ApplicationController
   def new
+    @last_registration = ParkingRegistration.find_by_id(session[:last_registration_id])
     @parking_registration = ParkingRegistration.new
+    @parking_registration.email = @last_registration.try(:email)
+
   end
 
   def create
     @parking_registration = ParkingRegistration.new(reg_params)
-     #binding.pry
     if @parking_registration.park
+        session[:last_registration_id] = @parking_registration.id
         flash[:notice] = 'You registered successfully'
         redirect_to "/parking_registrations/#{@parking_registration.id}"
     else
