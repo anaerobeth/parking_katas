@@ -8,15 +8,21 @@ class ParkingRegistrationsController < ApplicationController
      #binding.pry
     if @parking_registration.park
         flash[:notice] = 'You registered successfully'
-        redirect_to '/'
+        redirect_to "/parking_registrations/#{@parking_registration.id}"
     else
         render :new
     end
   end
 
+  def show
+    @parking_registration = ParkingRegistration.find(params[:id])
+  end
 
   protected
   def reg_params
-    params.require(:parking_registration).permit(:email, :first_name, :last_name, :spot_number)
+    params.require(:parking_registration).permit(:email,
+      :first_name,
+      :last_name,
+      :spot_number)
   end
 end

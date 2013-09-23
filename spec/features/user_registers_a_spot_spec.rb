@@ -15,10 +15,11 @@ feature 'user registers a spot', %Q{
   #   I am able to check in.
 
 
-  # Additional story 'user can only register for one spot'
+  # Additional stories:
   # As a parker
   # I cannot check in to a spot that has already been checked in
   # So that two cars are not parked in the same spot
+
 
   scenario 'registers spot with valid information' do
 
