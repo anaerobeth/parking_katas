@@ -10,7 +10,7 @@ class ParkingRegistration < ActiveRecord::Base
 
   def park
     self.parked_on = Date.today
-    save!
+    save
   end
 
 end

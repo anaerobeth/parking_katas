@@ -4,7 +4,8 @@ class ParkingRegistrationsController < ApplicationController
   end
 
   def create
-     @parking_registration = ParkingRegistration.new(params[:parking_registration])
+    @parking_registration = ParkingRegistration.new(reg_params)
+     #binding.pry
     if @parking_registration.park
         flash[:notice] = 'You registered successfully'
         redirect_to '/'
@@ -13,10 +14,6 @@ class ParkingRegistrationsController < ApplicationController
     end
   end
 
-  def park
-    self.parked_on = Date.today
-    save!
-  end
 
   protected
   def reg_params

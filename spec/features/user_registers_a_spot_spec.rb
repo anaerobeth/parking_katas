@@ -14,12 +14,12 @@ feature 'user registers a spot', %Q{
 
     prev_count = ParkingRegistration.count
     visit '/'
-    fill_in 'Email', with: 'Beth'
+    fill_in 'Email', with: 'beth@gmail.company'
     fill_in 'First name', with: 'Beth'
-    fill_in 'Last name', with: 'Beth'
+    fill_in 'Last name', with: 'Tenorio'
     fill_in 'Spot number', with: '5'
     click_button 'Register'
-    expect(page).to have_content('You registered succesfully')
+    expect(page).to have_content('You registered successfully')
     expect(ParkingRegistration.count).to eql(prev_count + 1)
   end
 
