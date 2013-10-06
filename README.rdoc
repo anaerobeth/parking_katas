@@ -1,18 +1,11 @@
 == README
 
-* Ruby version
-Ruby 2.0
+A simple Rails app for managing a parking facility
 
-* System dependencies
-Rails 4
+A user can register a parking spot, can see his neighbor, is informed what spot he parked in yesterday.
 
+* Ruby version: Ruby 2.0
+* System dependencies: Rails 4
+* Configuration: Postgresql
+* Test suite: Capybara
 
-* Configuration
-Postgresql
-
-* Test suite
-
-
-* Iterations
-1. spec/features/user_registers_a_parking_spot_spec.rb
-2. rails g resource ParkingRegistration first_name:string last_name:string email:string spot_number:integer parked_on:date
